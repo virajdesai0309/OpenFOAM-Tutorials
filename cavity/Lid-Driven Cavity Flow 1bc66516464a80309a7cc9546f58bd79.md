@@ -1,11 +1,11 @@
+# Lid-Driven Cavity Flow
+
 # **Introduction** 🚀
 
 Welcome to your first **OpenFOAM simulation**! 🎉 Today, we'll explore a classic computational fluid dynamics (CFD) problem: **Lid-Driven Cavity Flow**. By the end of this tutorial, you'll understand how to:
 
 ✅ Pre-process the simulation case
-
 ✅ Run the solver
-
 ✅ Post-process the results
 
 Let's get started! 🔥
@@ -26,7 +26,7 @@ In this tutorial, we will simulate **isothermal, incompressible flow** inside a 
 
 ---
 
-![2.1 Geometry of lid driven cavity](attachment:1b1faf75-7a36-4b27-9d9f-3ff211af8468:image.png)
+![2.1 Geometry of lid driven cavity](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image.png)
 
 2.1 Geometry of lid driven cavity
 
@@ -64,7 +64,7 @@ OpenFOAM always operates in a **3D Cartesian coordinate system**. However, we ca
 
 🖼️ **Mesh Structure:** The block structure is illustrated in **Figure 2.2**.
 
-![Block Structure of the mesh cavity](attachment:ea2784d5-360d-48f4-867e-3587b1a293d2:image.png)
+![Block Structure of the mesh cavity](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%201.png)
 
 Block Structure of the mesh cavity
 
@@ -88,11 +88,11 @@ Once inside the terminal, simply run the following command to generate the mesh:
 blockMesh
 ```
 
-![image.png](attachment:b1f419d4-3f9d-4558-9b7a-be9d8b51b3ce:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%202.png)
 
 ✅ **That's it!** You’ve now successfully created the block mesh. 🎉
 
-![image.png](attachment:5f6fe427-37bd-442d-99ce-e5c5afed047d:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%203.png)
 
 ## **⚙️ Setting Up the Simulation**
 
@@ -182,7 +182,7 @@ paraFoam &
 - Click **Apply** to visualize the results.
 - Explore the velocity field, pressure distribution, and flow patterns.
 
-![image.png](attachment:662261ca-1907-47d7-b21d-72644012e3e6:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%204.png)
 
 ### **🎥 Running the Animation**
 
@@ -206,7 +206,7 @@ To improve visualization clarity:
 
 ✅ This makes the velocity gradient **easier to interpret**!
 
-![image.png](attachment:86f08a8c-f806-4246-bcdc-899cefd3195c:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%205.png)
 
 ### **🛠️ Activating Start Trace in ParaView**
 
@@ -228,7 +228,7 @@ To **record your actions** for reproducibility, you can activate the **Start Tra
 
 🔴 **Now, every click and change you make will be logged.**
 
-![image.png](attachment:b7cedbf4-a37e-4197-a7b2-ca8e5914bb9a:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%206.png)
 
 ### **📏 Creating a 2D Slice View in ParaView**
 
@@ -256,9 +256,9 @@ To **reduce the 3D view to a 2D slice**, follow these steps:
 
 Would you like to overlay **streamlines** for better visualization? 🚀
 
-![image.png](attachment:698219b4-6786-463c-b4a3-91089bbac142:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%207.png)
 
-![image.png](attachment:53d37987-aa03-48ad-8ed5-658521bda6d0:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%208.png)
 
 ### **🎨 Enhancing the Slice View with Turbo Colormap**
 
@@ -282,9 +282,9 @@ To improve visualization, let's apply the **Turbo** colormap to the slice view.
 
 Would you like to add **contours** or **streamlines** next for better flow visualization? 🚀
 
-![image.png](attachment:841c2088-ee71-456d-bf56-ac719f273938:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%209.png)
 
-![image.png](attachment:a97ec050-7925-45d5-9aa7-3c0634c0091f:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2010.png)
 
 ### **🔍 Adding Contours to the Visualization**
 
@@ -298,7 +298,7 @@ Now, let's overlay **contours** to highlight specific velocity or pressure level
 
 3️⃣ Press **Enter** or click **OK** to activate it.
 
-![image.png](attachment:f51809c0-5ec2-4b68-91ec-745d831c4abd:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2011.png)
 
 ### **⚙️ Setting Up Contours**
 
@@ -311,13 +311,13 @@ Now, let's overlay **contours** to highlight specific velocity or pressure level
 - Click **Add Range** to specify multiple levels, or
 - Manually enter values based on the velocity/pressure range.
 
-![image.png](attachment:c2916b4a-a30c-4356-aeb8-a0893175985b:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2012.png)
 
 4️⃣ Click **Apply** to generate the contours.
 
 ✅ **Done!** You now have a clear view of flow patterns with contour lines! 🎯
 
-![image.png](attachment:d9da5105-3d3f-49fd-9d62-5fbba6798274:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2013.png)
 
 ### **👀 Managing Views in ParaView**
 
@@ -339,7 +339,7 @@ Now, let's add **glyphs** to visualize velocity vectors!
 
 4️⃣ Press **Enter** or click **OK** to activate it.
 
-![image.png](attachment:26b9f8dd-f3bd-4098-badf-258ae4e42189:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2014.png)
 
 ### **⚙️ Configuring Glyphs (Vector Arrows)**
 
@@ -355,7 +355,7 @@ Now, let's add **glyphs** to visualize velocity vectors!
 
 ✅ **Done!** Now you can see **velocity vectors** overlaid on the slice view! 🏹
 
-![image.png](attachment:8c3b68a6-3f2d-4e28-bbda-f66b682e388d:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2015.png)
 
 ### **🌊 Adding Streamlines for Flow Visualization**
 
@@ -371,7 +371,7 @@ Now, let's visualize the **flow paths** using the **Stream Tracer** tool!
 
 4️⃣ Press **Enter** or click **OK** to activate it.
 
-![image.png](attachment:52e0f059-92ac-4f22-99d9-46ec6feaf2b9:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2016.png)
 
 ### **⚙️ Configuring Streamlines**
 
@@ -381,15 +381,15 @@ Now, let's visualize the **flow paths** using the **Stream Tracer** tool!
 
 3️⃣ Reduce the **Resolution** from **256** to **21** for a more optimized view.
 
-![image.png](attachment:cac097b0-39c9-4fe6-9ef6-acf151daa236:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2017.png)
 
-![image.png](attachment:3ccada5f-1e4c-4b52-95fc-21096092b7e1:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2018.png)
 
 4️⃣ Click **Apply** to generate the streamlines.
 
 ✅ **Done!** You now have **streamlines** representing the flow paths in your simulation! 🔥
 
-![image.png](attachment:ed1aab99-c082-4cfc-b468-9ec4795bdaaf:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2019.png)
 
 ### **🌀 Enhancing Streamlines with Tubes**
 
@@ -405,7 +405,7 @@ Now, let's make the **streamlines more visible** by applying a **Tube Filter**!
 
 4️⃣ Press **Enter** or click **OK** to activate it.
 
-![image.png](attachment:61ce83c3-95ec-4ff6-8ccf-20f61d654efd:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2020.png)
 
 ### **⚙️ Adjusting Tube Settings**
 
@@ -417,7 +417,7 @@ Now, let's make the **streamlines more visible** by applying a **Tube Filter**!
 
 ✅ **Done!** Your streamlines now appear as smooth, tubular structures for better clarity! 🎯
 
-![image.png](attachment:6a00c90b-2f2a-4cff-9cbb-bcbaae224334:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2021.png)
 
 ### **🛠️ Saving the Trace**
 
@@ -431,13 +431,13 @@ After making adjustments (e.g., selecting velocity, playing animation, changing 
 
 ✅ **This is useful if you want to automate post-processing with Python in ParaView!**
 
-![image.png](attachment:37862544-8009-4c0e-aa17-0835e8c65ea3:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2022.png)
 
 ### **💾 Saving the Script as a Macro in ParaView**
 
 To **automate** the entire visualization process, let's save this sequence as a **Macro** in ParaView! This will allow you to quickly generate the plots in future simulations **without repeating the steps manually**.
 
-![image.png](attachment:5a603ebc-cae9-46a0-9309-4d4a285759a8:image.png)
+![image.png](Lid-Driven%20Cavity%20Flow%201bc66516464a80309a7cc9546f58bd79/image%2023.png)
 
 ### **🛠️ Using the Macro**
 
