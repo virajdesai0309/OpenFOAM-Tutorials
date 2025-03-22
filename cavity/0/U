@@ -1,0 +1,42 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;         // ASCII format for human readability
+    class       volVectorField;  // Declares this as a vector field (velocity has 3 components)
+    object      U;            // Field name is 'U' for velocity
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Dimensions: [0 1 -1 0 0 0 0] represents m/s (velocity units)
+dimensions      [0 1 -1 0 0 0 0];
+
+// Initial condition: zero velocity everywhere in the domain
+internalField   uniform (0 0 0);
+
+// Boundary conditions for each patch
+boundaryField
+{
+    movingWall
+    {
+        type            fixedValue;      // Fixed velocity boundary condition
+        value           uniform (1 0 0);  // Moving lid velocity: 1 m/s in x-direction
+    }
+
+    fixedWalls
+    {
+        type            noSlip;          // No-slip condition (zero velocity) at walls
+    }
+
+    frontAndBack
+    {
+        type            empty;           // Empty condition for 2D simulation
+    }
+}
+
+// ************************************************************************* //

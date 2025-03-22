@@ -1,0 +1,41 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;        // File format specification
+    class       volScalarField;  // Declares this as a scalar field variable
+    object      p;           // Field name is 'p' for pressure
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Dimensions: [kg m s K mol A cd] - here [0 2 -2 0 0 0 0] represents m²/s² (pressure/density)
+dimensions      [0 2 -2 0 0 0 0];
+
+// Initial condition for internal field (pressure set to zero everywhere)
+internalField   uniform 0;
+
+// Boundary conditions for each patch
+boundaryField
+{
+    movingWall
+    {
+        type            zeroGradient;    // No pressure gradient normal to the moving wall
+    }
+
+    fixedWalls
+    {
+        type            zeroGradient;    // No pressure gradient normal to fixed walls
+    }
+
+    frontAndBack
+    {
+        type            empty;           // Empty condition for 2D simulation
+    }
+}
+
+// ************************************************************************* //

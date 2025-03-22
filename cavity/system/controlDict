@@ -1,0 +1,47 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;        // Use ASCII format for readability
+    class       dictionary;   // Dictionary type for simulation control parameters
+    location    "system";     // Located in system directory
+    object      controlDict;  // Control dictionary for time and I/O settings
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Specify the OpenFOAM solver application to use
+application     foamRun;
+
+// Specify the type of solver (incompressible fluid flow)
+solver          incompressibleFluid;
+
+// Time control settings
+startFrom       startTime;    // Start from startTime value
+startTime       0;           // Start time for the simulation
+stopAt          endTime;     // Run until endTime
+endTime         10;          // End time for the simulation
+deltaT          0.005;       // Time step size
+
+// Data writing controls
+writeControl    timeStep;     // Write data based on number of time steps
+writeInterval   100;         // Save data every 100 time steps
+purgeWrite      0;           // Keep all time directories (0 = no purging)
+
+// Output format settings
+writeFormat     ascii;       // Write data in ASCII format
+writePrecision  6;          // Number of significant digits to write
+writeCompression off;        // No compression for output files
+
+// Time precision settings
+timeFormat      general;     // General time format
+timePrecision   6;          // Number of significant digits for time
+
+// Runtime modification flag
+runTimeModifiable true;      // Allow dictionary modification during runtime
+
+// ************************************************************************* //
