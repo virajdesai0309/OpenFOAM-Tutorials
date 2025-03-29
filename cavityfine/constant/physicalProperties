@@ -1,0 +1,26 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;        // Use ASCII format for readability
+    class       dictionary;   // This file is a dictionary of physical properties
+    location    "constant";   // File located in constant directory
+    object      physicalProperties;  // Name of the dictionary object
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Specify constant kinematic viscosity model
+viscosityModel  constant;
+
+// Kinematic viscosity nu = mu/rho (mu: dynamic viscosity, rho: density)
+// Value: 1e-05 m²/s (typical value for air at room temperature)
+// Dimensions: [0 2 -1 0 0 0 0] represents m²/s
+
+nu              1e-05 [m^2/s];
+
+// ************************************************************************* //

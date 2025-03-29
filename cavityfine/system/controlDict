@@ -1,0 +1,47 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;        // Use ASCII format for readability
+    class       dictionary;   // Dictionary type for simulation control parameters
+    location    "system";     // Located in system directory
+    object      controlDict;  // Control dictionary for time and I/O settings
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Standard solver application for OpenFOAM-12
+application     foamRun;
+
+// Solver type specification for incompressible flow calculations
+solver          incompressibleFluid;
+
+// Time control settings
+startFrom       startTime;    // Initialize simulation from startTime
+startTime       0.5;          // Initial time of the simulation (in seconds)
+stopAt          endTime;      // Run simulation until reaching endTime
+endTime         0.7;          // Final time of the simulation (in seconds)
+deltaT          0.0025;       // Fixed time step size (in seconds)
+
+// Output control settings
+writeControl    runTime;      // Write data based on simulation time
+writeInterval   0.1;          // Save results every 0.1 seconds
+purgeWrite      0;            // Retain all time directories
+
+// Data output configuration
+writeFormat     ascii;        // Store data in human-readable ASCII format
+writePrecision  6;           // Number of decimal places in output data
+writeCompression off;        // Disable data compression for direct access
+
+// Time formatting options
+timeFormat      general;      // Use standard numerical format for time values
+timePrecision   6;           // Decimal places for time value output
+
+// Runtime modification settings
+runTimeModifiable true;       // Enable dictionary updates during simulation
+
+// ************************************************************************* //

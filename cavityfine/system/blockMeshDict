@@ -1,0 +1,76 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Scale factor for converting vertices coordinates to meters
+convertToMeters 0.1;
+
+// Define the 8 vertices of the hexahedral block
+// Format: (x y z) coordinates
+vertices
+(
+    (0 0 0)    // vertex 0: origin
+    (1 0 0)    // vertex 1: point along x
+    (1 1 0)    // vertex 2: point in xy plane
+    (0 1 0)    // vertex 3: point along y
+    (0 0 0.1)  // vertex 4: point along z
+    (1 0 0.1)  // vertex 5: point in xz plane
+    (1 1 0.1)  // vertex 6: point in xyz space
+    (0 1 0.1)  // vertex 7: point in yz plane
+);
+
+// Define the mesh block using vertices
+// Format: hex (v0 v1 v2 v3 v4 v5 v6 v7) (nx ny nz) simpleGrading (gx gy gz)
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (40 40 1) simpleGrading (1 1 1)
+);
+
+// Define boundary patches and their faces
+boundary
+(
+    // Top moving wall (lid)
+    movingWall
+    {
+        type wall;
+        faces
+        (
+            (3 7 6 2)  // Single face using vertices 3,7,6,2
+        );
+    }
+    // Fixed walls (sides and bottom)
+    fixedWalls
+    {
+        type wall;
+        faces
+        (
+            (0 4 7 3)  // Left wall
+            (2 6 5 1)  // Right wall
+            (1 5 4 0)  // Bottom wall
+        );
+    }
+    // Front and back faces (empty type for 2D simulation)
+    frontAndBack
+    {
+        type empty;
+        faces
+        (
+            (0 3 2 1)  // Front face
+            (4 5 6 7)  // Back face
+        );
+    }
+);
+
+
+// ************************************************************************* //
